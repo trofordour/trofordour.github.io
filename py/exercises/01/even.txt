@@ -1,0 +1,22 @@
+Write a simple program that can tell if a number is odd or even.
+
+Hint: the % operator calculates the remainder of an integer division.
+
+The output should look something like this:
+
+
+I can tell you if an integer is odd or even
+
+Enter an integer: 3
+
+3 is odd
+
+
+I can tell you if an integer is odd or even
+
+Enter an integer: 356
+
+356 is even
+
+
+
