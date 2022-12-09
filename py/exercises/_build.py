@@ -20,6 +20,6 @@ with open(INDEX, 'a') as outStream:
                 filePath = os.path.join(root, file)
                 print(filePath)
 
-                outStream.write(f"<a href='{filePath}'>{file.replace('.txt', '')}</a>\n")
+                outStream.write(f"<div><a href='{filePath}'>{file.replace('.txt', '')}</a></div>\n")
 
 
