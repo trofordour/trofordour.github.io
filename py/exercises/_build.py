@@ -11,10 +11,15 @@ with open(INDEX, 'a') as outStream:
         # print(f"{root}:{dirs}:{files}")
 
         if re.search('[0-9][0-9]$', root) is not None:
+
+            dirName = root.removeprefix('.\\')
+
+            outStream.write(f'<h3>{dirName}</h3>\n')
+
             for file in files:
                 filePath = os.path.join(root, file)
                 print(filePath)
 
-                outStream.write(filePath)
+                outStream.write(f"<a href='{filePath}'>{file.replace('.txt', '')}</a>\n")
 
 
