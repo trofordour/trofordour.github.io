@@ -18,8 +18,10 @@ with open(INDEX, 'a') as outStream:
 
             for file in files:
                 filePath = os.path.join(root, file)
+
                 print(filePath)
 
                 outStream.write(f"<div><a href='{filePath}'>{file.replace('.html', '')}</a></div>\n")
+
 
 
