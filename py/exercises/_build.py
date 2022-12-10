@@ -7,6 +7,8 @@ if os.path.exists(INDEX):
     os.remove(INDEX)
 
 with open(INDEX, 'a') as outStream:
+    outStream.write("<pre>\n")
+
     for root, dirs, files in os.walk('.'):
         # print(f"{root}:{dirs}:{files}")
 
@@ -21,7 +23,7 @@ with open(INDEX, 'a') as outStream:
 
                 print(filePath)
 
-                outStream.write(f"<div><a href='{filePath}'>{file.replace('.html', '')}</a></div>\n")
+                outStream.write(f"<a href='{filePath}'>{file.replace('.html', '')}</a>\n")
 
 
 
