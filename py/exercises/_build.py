@@ -6,15 +6,17 @@ INDEX = 'index.html'
 if os.path.exists(INDEX):
     os.remove(INDEX)
 
+print("hello world")
+
 with open(INDEX, 'a') as outStream:
     outStream.write("<pre>\n")
 
     for root, dirs, files in os.walk('.'):
-        # print(f"{root}:{dirs}:{files}")
+        print(f"{root}:{dirs}:{files}")
 
-        if re.search('[0-9][0-9]$', root) is not None:
+        if re.search('^\\.\\\\[0-9][0-9]', root) is not None:
 
-            dirName = root.removeprefix('.\\')
+            dirName = root.removeprefix('.\\').replace("_", " ")
 
             outStream.write(f'<h3>{dirName}</h3>\n')
 
