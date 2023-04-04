@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Bubble sort</h3>
+<div class='description'>
+Implement bubble sort on a list of random numbers.
+
+Tips:
+
+Use code from the previous exercises to:
+
+* generate an initial list of random numbers to be sort
+
+* provide a function to compare two items in a list
+
+* swap two numbers in a list</div>
+
+<h3>Sample output</h3>
+<pre>
+Initial list: [93, 4, 2, 49, 4]
+List length: 5
+
+=== Pass 1. Sorted items: 0.
+Swapping item 0 = 93 with item 1 = 4
+Before: [93, 4, 2, 49, 4]
+After:  [4, 93, 2, 49, 4]
+
+Swapping item 1 = 93 with item 2 = 2
+Before: [4, 93, 2, 49, 4]
+After:  [4, 2, 93, 49, 4]
+
+Swapping item 2 = 93 with item 3 = 49
+Before: [4, 2, 93, 49, 4]
+After:  [4, 2, 49, 93, 4]
+
+Swapping item 3 = 93 with item 4 = 4
+Before: [4, 2, 49, 93, 4]
+After:  [4, 2, 49, 4, 93]
+
+
+=== Pass 2. Sorted items: 1.
+Swapping item 0 = 4 with item 1 = 2
+Before: [4, 2, 49, 4, 93]
+After:  [2, 4, 49, 4, 93]
+
+Item 1 = 4 and item 2 = 49 are in the correct order
+
+Swapping item 2 = 49 with item 3 = 4
+Before: [2, 4, 49, 4, 93]
+After:  [2, 4, 4, 49, 93]
+
+
+=== Pass 3. Sorted items: 2.
+Item 0 = 2 and item 1 = 4 are in the correct order
+
+Item 1 = 4 and item 2 = 4 are in the correct order
+
+
+=== Sort complete
+Final sorted list: [2, 4, 4, 49, 93]</pre>
+</body>
+</html>
