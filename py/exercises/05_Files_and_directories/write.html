@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Write a file</h3>
+<div class='description'>
+Make a new version of your times table program that writes its output to a .txt file.
+
+Tips
+
+Opening a file as shown below will allow you to call the .writelines() method on the file, to write out one or more lines.
+
+You must place the newline character ("\n") at the end of each string you write to ensure that it appears on its own line in the output.
+<pre>
+with open('hello.txt', 'w') as file:
+    file.writelines("hello world\n")
+</pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Enter the number of the times table you want me to print: 4
+
+Enter the name of the file you want me to print the output to: four-times.txt
+
+----- start of content from four-times.txt-----
+1 * 4 = 4
+2 * 4 = 8
+3 * 4 = 12
+4 * 4 = 16
+5 * 4 = 20
+6 * 4 = 24
+7 * 4 = 28
+8 * 4 = 32
+9 * 4 = 36
+10 * 4 = 40
+11 * 4 = 44
+12 * 4 = 48
+
+------ end of content from four-times.txt------</pre>
+</body>
+</html>

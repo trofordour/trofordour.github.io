@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Generating simple web pages</h3>
+<div class='description'>
+Write a program that prompts the user for their name and writes a file called hello.html that contains a colourful greeting.
+
+Open hello.html in your browser to see the greeting.
+
+Tips:
+
+In the sample HTML given below, it is only necessary to change a single line to set the user's name to something different.
+
+The rest of the HTML given in the example below can simply be copied, and reused in your code. Think of this static chunk of HTML as a <em>template</em>.
+
+The template can be stored in another text file, which your program will need to read, or it can be "hard-coded" in a string variable.
+
+To store a long, multi-line string in Python, use triple quotes. For example:
+
+template = """This is a long and
+complex string
+that is spanning
+multiple lines"""
+</div>
+
+<h3>Sample output</h3>
+<pre>
+What is your name? <strong>Alice</strong>
+
+Here's the contents of the file: hello.html
+
+----- start content -----
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+div.greeting {
+    background-color: cyan;
+    border: 1px solid blue;
+    color: magenta;
+    font-size: 24px;
+    padding: 12px;
+    text-align: center;
+}
+
+span.name {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#x27;greeting&#x27;&gt;
+Hello &lt;span class=&#x27;name&#x27;&gt;Alice&lt;/span&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+------ end content ------
+
+Here's how it might look when opened in a browser:
+</pre>
+<div class='greeting'>
+Hello <span class='name'>Alice</span>
+</div>
+<pre></pre>
+</body>
+</html>
