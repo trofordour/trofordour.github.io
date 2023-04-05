@@ -13,13 +13,12 @@ Tips:
 Use the with-statement in conjunction with the open(path, 'r') method to open a file for reading.
 
 For example, the following line opens the file, specified by the variable path, for reading:
-
+<pre class='sample-code'>
 with open(path, 'r') as myfile:
-
-Inside the with-block, the variable myfile can be used to perform operations on the file.
+</pre>Inside the with-block, the variable myfile can be used to perform operations on the file.
 
 For example, the .read() method reads the contents of a file:
-<pre>
+<pre class='sample-code'>
 with open(path, 'r') as myfile:
     contents = myfile.read()
 </pre></div>
