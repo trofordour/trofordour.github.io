@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Logical operators</h3>
+<div class='description'>
+Print the truth tables for logical-not, logical-and, and logical-or.
+
+Tips:
+
+The following code can be used to iterate over the range of all possible combinations of two truth values (aka Booleans).
+<pre class='sample-code'>
+truth_values = [True, False]
+
+for a in truth_values:
+    for b in truth_values:
+        # Do something with a and b...
+</pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Truth table for logical-not
+
+ A     ¦ not A
+---------------
+ True  ¦ False
+ False ¦ True
+
+Truth table for logical-and
+
+ A     ¦ B     ¦ A and B
+------------------------
+ True  ¦ True  ¦ True
+ True  ¦ False ¦ False
+ False ¦ True  ¦ False
+ False ¦ False ¦ False
+
+Truth table for logical-or
+
+ A     ¦ B     ¦ A or B
+------------------------
+ True  ¦ True  ¦ True
+ True  ¦ False ¦ True
+ False ¦ True  ¦ True
+ False ¦ False ¦ False</pre>
+</body>
+</html>
