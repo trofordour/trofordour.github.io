@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Insert one item into a sorted list</h3>
+<div class='description'>
+Create a new program that begins with the following line:
+<pre class='sample-code'>
+nums = [4, 12, 15, 27, 29, 46, 61, 76, 94, 96]
+</pre>nums is a sorted list of random numbers (sorted lowest to highest).
+
+Ask the user to enter a number. Convert the input value from a string to an int using the int() function. Insert the entered number into the list above, maintaining the sort order (lowest to highest).
+
+This requires iterating over the list, from beginning to end, comparing each existing list item with the new value, until either:
+<ul><li>an existing item is found that is larger than the new value, which means that the new value should be inserted before this bigger item;
+<li>or, the end of the list is reached, which means the new value is bigger than any existing item, and the new value should be appended to the list.</li></ul>Move the code that inserts a number into the list into a function that starts as shown below:
+<pre class='sample-code'>
+def insert1(list, num):
+    # Insert num into sorted list
+</pre>
+Tips:
+
+Use the .insert(index, item) method to insert an item into a list before a given index.
+
+Use the .append(item) method to add an item to the end of a list.</div>
+
+<h3>Sample output</h3>
+<pre>
+Initial list: [4, 12, 15, 27, 29, 46, 61, 76, 94, 96]
+
+Enter a number to insert into the list: 1
+
+Final list: [1, 4, 12, 15, 27, 29, 46, 61, 76, 94, 96]
+
+
+
+Initial list: [4, 12, 15, 27, 29, 46, 61, 76, 94, 96]
+
+Enter a number to insert into the list: 50
+
+Final list: [4, 12, 15, 27, 29, 46, 50, 61, 76, 94, 96]
+
+
+
+Initial list: [4, 12, 15, 27, 29, 46, 61, 76, 94, 96]
+
+Enter a number to insert into the list: 100
+
+Final list: [4, 12, 15, 27, 29, 46, 61, 76, 94, 96, 100]</pre>
+</body>
+</html>
