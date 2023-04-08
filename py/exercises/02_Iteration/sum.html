@@ -7,6 +7,21 @@
 <h3>Summing a list of numbers</h3>
 <div class='description'>
 Write a program to sum a list of numbers.
+
+Tips:
+
+Use a while-loop to iterate until some condition becomes true e.g. the user enters a certain string, like 'q'. Here's an example:
+<pre class='sample-code'>
+answer = input('Enter Q to quit:')
+
+while answer.upper() != 'Q':
+    print('You said:', answer)
+    answer = input('Enter Q to quit:')
+</pre>The most important thing to remember when writing a while-loop is that something must happen inside the body of the loop that can change the <em>termination condition</em> (i.e. the logical expression on the line starting with while).
+
+In the example above, the user is always prompted for a new answer, as the last action in the loop's body.
+
+A common bug in while-loops is that the developer forgets to implement the above rule, and the program becomes trapped in the loop forever, creating an <em>infinite-loop</em>.
 </div>
 
 <h3>Sample output</h3>

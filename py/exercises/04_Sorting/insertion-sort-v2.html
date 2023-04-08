@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Insertion sort - without creating a new list</h3>
+<div class='description'>
+Implement insertion sort on a list of random numbers, rearranging the existing list, in-place, into the desired sorted order.
+
+Tips:
+
+To perform insertion sort, we iterate over the original list. We treat the first part of the list as the target sorted list.
+
+Initially, the sorted sub-list consists of the first item in the list, which is correctly sorted because it only contains one number.
+
+In each iteration, we grow the sorted sub-list by inserting the first item from the unsorted sub-list into the sorted sub-list.
+
+So, the overall list is divided into two parts:
+<ul><li>the first sub-section is sorted, and grows by one item during each iteration;</li>
+<li>the second sub-section is unsorted, and shrinks by one item during each iteration.</li></ul>To perform the insertion of a new item into the sorted part of the list we use the sort2() and swap() functions we developed for bubble sort. The insert2() function is not used here.
+</div>
+
+<h3>Sample output</h3>
+<pre>
+Initial list: [99, 17, 43, 81, 24]
+List length: 5
+
+=== Pass 1. Sorted items: 1.
+Inserting item 1 = 17 into [99]
+
+Swapping item 0 = 99 with item 1 = 17
+Before: [99, 17, 43, 81, 24]
+After:  [17, 99, 43, 81, 24]
+
+List at end of pass: [17, 99, 43, 81, 24]
+
+=== Pass 2. Sorted items: 2.
+Inserting item 2 = 43 into [17, 99]
+
+Swapping item 1 = 99 with item 2 = 43
+Before: [17, 99, 43, 81, 24]
+After:  [17, 43, 99, 81, 24]
+
+Item 0 = 17 and item 1 = 43 are in the correct order
+
+List at end of pass: [17, 43, 99, 81, 24]
+
+=== Pass 3. Sorted items: 3.
+Inserting item 3 = 81 into [17, 43, 99]
+
+Swapping item 2 = 99 with item 3 = 81
+Before: [17, 43, 99, 81, 24]
+After:  [17, 43, 81, 99, 24]
+
+Item 1 = 43 and item 2 = 81 are in the correct order
+
+List at end of pass: [17, 43, 81, 99, 24]
+
+=== Pass 4. Sorted items: 4.
+Inserting item 4 = 24 into [17, 43, 81, 99]
+
+Swapping item 3 = 99 with item 4 = 24
+Before: [17, 43, 81, 99, 24]
+After:  [17, 43, 81, 24, 99]
+
+Swapping item 2 = 81 with item 3 = 24
+Before: [17, 43, 81, 24, 99]
+After:  [17, 43, 24, 81, 99]
+
+Swapping item 1 = 43 with item 2 = 24
+Before: [17, 43, 24, 81, 99]
+After:  [17, 24, 43, 81, 99]
+
+Item 0 = 17 and item 1 = 24 are in the correct order
+
+List at end of pass: [17, 24, 43, 81, 99]</pre>
+</body>
+</html>
