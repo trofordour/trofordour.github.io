@@ -6,7 +6,7 @@
 <body><a href='../index.html'>Home</a>
 <h3>Insertion sort - without creating a new list</h3>
 <div class='description'>
-Implement insertion sort on a list of random numbers, rearranging the existing list, in-place, into the desired sorted order.
+Implement insertion sort on a list of random numbers, rearranging the existing list, in-place, into the desired order.
 
 Tips:
 
@@ -18,7 +18,11 @@ In each iteration, we grow the sorted sub-list by inserting the first item from 
 
 So, the overall list is divided into two parts:
 <ul><li>the first sub-section is sorted, and grows by one item during each iteration;</li>
-<li>the second sub-section is unsorted, and shrinks by one item during each iteration.</li></ul>To perform the insertion of a new item into the sorted part of the list we use the sort2() and swap() functions we developed for bubble sort. The insert2() function is not used here.
+<li>the second sub-section is unsorted, and shrinks by one item during each iteration.</li></ul>To perform the insertion of a new item into the sorted part of the list we iterate <em>backwards</em> over the target sub-list comparing the new item against each existing item until we find the correct location of the new item.
+
+Use the sort2() and swap() functions we developed for bubble sort to shuffle the new item into the correct position.
+
+The insert2() function is not used in this solution (and neither are the .insert() or .append() methods). All required changes to the list can be implemented by the swap() function.
 </div>
 
 <h3>Sample output</h3>
