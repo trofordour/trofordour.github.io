@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>File system browser</h3>
+<div class='description'>
+Write a program that allows the user to interactively navigate and inspect the file system.
+
+The program should provide a prompt for the user that shows the current working directory.
+
+The user should then be able to type in a command. The following commands should be supported:
+<pre class='sample-code'>
+cd &ltpath&gt - change directory
+? or help - print help
+dir - list contents of current directory
+quit - quit the program
+type &ltfile&gt - type the contents of a file
+</pre>After executing the command entered by the user, the program should re-issue the prompt to recieve the next command. This process should continue until the user enters the quit command to terminate the program.
+
+Tips:
+
+Listing a directory and typing a file were implemented in previous exercises. Put the code for these operations into functions to make them easy to reuse.
+
+Use os.path.abspath('.') to get the current working directory, to make the prompt.
+
+Use os.chdir(path) to change directory.
+
+A program that prompts for a command, executes it, and then prompts for a another command, is often referred to as a REPL, which stands for:
+<ul><li>Read command</li>
+<li>Execute command</li>
+<li>Print result</li>
+<li>Loop back to the beginning</li></ul>The following code can be used as the foundation of a program that implements a REPL:
+<pre class='sample-code'>
+def get_command():
+    instruction = input(get_prompt())
+
+    tokens = instruction.split()
+
+    command = tokens[0].lower() if len(tokens) > 0 else ""
+
+    argument = tokens[1] if len(tokens) > 1 else ""
+
+    return (command, argument)
+
+# Interactive command loop...
+(command, argument) = get_command()
+
+while command != "QUIT":
+    # Process command...
+
+    # Once command has been processed, get the next command...
+    (command, argument) = get_command()    
+</pre></div>
+
+<h3>Sample output</h3>
+<pre>
+...\source\repos\py\py-exercises\06_Files_and_directories> <strong>foo</strong>
+Unrecognized command. Enter ? or help for help.
+
+...\source\repos\py\py-exercises\06_Files_and_directories> <strong>help</strong>
+cd &ltpath&gt - change directory
+? or help - print help
+dir - list contents of current directory
+quit - quit the program
+type &ltfile&gt - type the contents of a file
+
+...\source\repos\py\py-exercises\06_Files_and_directories> <strong>dir</strong>
+D - browse
+D - exists
+D - list-files
+D - read
+D - write
+
+F - _index.txt
+
+
+...\source\repos\py\py-exercises\06_Files_and_directories> <strong>cd read</strong>
+
+...\source\repos\py\py-exercises\06_Files_and_directories\read> <strong>dir</strong>
+F - read.py
+F - test.txt
+F - _description.txt
+F - _example.txt
+
+
+...\source\repos\py\py-exercises\06_Files_and_directories\read> <strong>type test.txt</strong>
+This is a simple text file that contains some text.
+
+Have a nice day.
+
+The End.
+
+...\source\repos\py\py-exercises\06_Files_and_directories\read> <strong>cd ..</strong>
+
+...\source\repos\py\py-exercises\06_Files_and_directories> <strong>dir</strong>
+D - browse    
+D - exists    
+D - list-files
+D - read      
+D - write     
+
+F - _index.txt
+
+
+...\source\repos\py\py-exercises\06_Files_and_directories> <strong>quit</strong>
+</pre>
+</body>
+</html>
