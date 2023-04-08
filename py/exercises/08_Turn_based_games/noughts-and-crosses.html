@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Noughts and crosses</h3>
+<div class='description'>
+Implement noughts and crosses (also known as tic-tac-toe), where a human can play against your program.
+
+In your initial version, your program should choose a random free tile during its turn, to keep things simple.
+
+The <a href="https://en.wikipedia.org/wiki/Tic-tac-toe">wikipedia</a> page for tic-tac-toe presents an in-depth analysis of the game, with the logic that a computer would need to implement to play optimally, but implementing this is beyond the scope of these simple exercises.
+</div>
+
+<h3>Sample output</h3>
+<pre>
+=== Let's play noughts and crosses! ===
+
+Do you want to be O or X? o
+Do you want to be player 1 or 2? 1
+
+=== TURN 1 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+  1  ¦  2  ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦  6
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 123456789: 1
+
+=== TURN 2 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦  2  ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦  6
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+I claim tile: 4
+
+
+=== TURN 3 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  X  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦  2  ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  5  ¦  6
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 2356789: 2
+
+=== TURN 4 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦  O  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  X  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦     ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  5  ¦  6
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+I claim tile: 9
+
+
+=== TURN 5 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦  O  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  X  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  X
+     ¦     ¦
+
+
+     ¦     ¦
+     ¦     ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  5  ¦  6
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 35678: 3
+
+You won! Well done!
+
+     ¦     ¦
+  O  ¦  O  ¦  O
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  X  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  X
+     ¦     ¦
+
+
+=== Let's play noughts and crosses! ===
+
+Do you want to be O or X? o
+Do you want to be player 1 or 2? 1
+
+=== TURN 1 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+  1  ¦  2  ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦  6
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 123456789: 1
+
+=== TURN 2 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦  2  ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦     
+  4  ¦  5  ¦  6
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+I claim tile: 6
+
+
+=== TURN 3 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦  2  ¦  3
+     ¦     ¦     
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 2345789: 8
+
+=== TURN 4 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  O  ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦  2  ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦     
+  7  ¦     ¦  9
+     ¦     ¦
+
+I claim tile: 3
+
+
+=== TURN 5 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦     ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  O  ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦  2  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦     ¦  9
+     ¦     ¦     
+
+Enter the number of the free tile you want to capture. Free tiles are 24579: 9
+
+=== TURN 6 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦     ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  O  ¦  O
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦  2  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦     ¦
+     ¦     ¦
+
+I claim tile: 5
+
+
+=== TURN 7 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦     ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  O  ¦  O
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦  2  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦     ¦
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 247: 3
+Invalid choice. Enter the number of the free tile you want to capture. Free tiles are 247: 2
+
+=== TURN 8 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+  O  ¦  O  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  O  ¦  O
+     ¦     ¦
+
+Free tiles:
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦     ¦
+     ¦     ¦
+
+I claim tile: 7
+
+
+I won! Better luck next time!
+
+     ¦     ¦
+  O  ¦  O  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  X  ¦  O  ¦  O
+     ¦     ¦
+
+
+
+=== Let's play noughts and crosses! ===
+
+Do you want to be O or X? o
+Do you want to be player 1 or 2? 2
+
+=== TURN 1 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+  1  ¦  2  ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦  6
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+I claim tile: 6
+
+
+=== TURN 2 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  X  
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+  1  ¦  2  ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 12345789: 2
+
+=== TURN 3 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+     ¦  O  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+  1  ¦     ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦  5  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+I claim tile: 5
+
+
+=== TURN 4 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+     ¦  O  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+  1  ¦     ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  4  ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 134789: 4
+
+=== TURN 5 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+     ¦  O  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  O  ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+  1  ¦     ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+I claim tile: 1
+
+
+=== TURN 6 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+  X  ¦  O  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  O  ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦     ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦  9
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 3789: 9
+
+=== TURN 7 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+  X  ¦  O  ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  O  ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  O
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦     ¦  3
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦
+     ¦     ¦
+
+I claim tile: 3
+
+
+=== TURN 8 ===
+It's your turn...
+
+Current board:
+
+     ¦     ¦
+  X  ¦  O  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  O  ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦  O  
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  7  ¦  8  ¦
+     ¦     ¦
+
+Enter the number of the free tile you want to capture. Free tiles are 78: 7
+
+=== TURN 9 ===
+It's my turn...
+
+Current board:
+
+     ¦     ¦
+  X  ¦  O  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  O  ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  O  ¦     ¦  O
+     ¦     ¦
+
+Free tiles:
+
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦     ¦
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+     ¦  8  ¦
+     ¦     ¦
+
+I claim tile: 8
+
+
+It's a draw! Well played!
+
+     ¦     ¦
+  X  ¦  O  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  O  ¦  X  ¦  X
+     ¦     ¦
+-----+-----+-----
+     ¦     ¦
+  O  ¦  X  ¦  O
+     ¦     ¦
+</pre>
+</body>
+</html>
