@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Read list of numbers from a text file and sum them</h3>
+<div class='description'>
+Reading and displaying the contents of text files has been covered in previous exercises. Now we can learn how to start doing something useful with the data that we find in files, beyond simply displaying it.
+
+Write a program that prompts the user for the name of a file that contains a list of numbers, one number per line. The program should read the contents of the file, and then calculate and print the sum of the numbers.
+
+Tips:
+
+The following code will split a string of text that contains newline characters ('\n') into a list of strings, where each string in the list is the contents of one line. The newline characters are removed from the strings (which is usually what we want).
+<pre class='sample-code'>
+with open(path, 'r') as file:
+    contents = file.read()
+
+lines = contents.splitlines()
+</pre>The following list comprehension will convert a list of strings into a list of integers.
+<pre class='sample-code'>
+numbers = [int(line) for line in lines]
+<pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Enter name of file containing a list of numbers to add: <strong>numbers.txt</strong>
+
+----- Contents of file: numbers.txt -----
+12
+19
+104
+6
+18
+22
+37
+12
+16
+5
+1
+
+------ End of content ------
+
+Content of file split into lines: ['12', '19', '104', '6', '18', '22', '37', '12', '16', '5', '1']
+
+List converted into integers: [12, 19, 104, 6, 18, 22, 37, 12, 16, 5, 1]
+
+Sum of the numbers: 252
+</pre>
+</body>
+</html>

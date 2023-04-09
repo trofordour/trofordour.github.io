@@ -14,7 +14,15 @@ Methods to interact with the filesystem can be found in the os module, so start 
 <pre class='sample-code'>
 import os
 </pre>The os.path.exists(path) method returns True if the specified path exists.
-</div>
+
+Alternatively, and more specfically, the os.path.isfile(path) method returns True if the specified path exists <em>and</em> refers to a file (as opposed to a directory, for example).
+
+If your program is not finding a file that you are certain exists, it may be that your program is looking in a different directory to the one you think it should be looking in.
+
+Put the following line in your code to print the current working directory of the program, to know where it is looking:
+<pre class='sample-code'>
+print(os.path.abspath('.'))
+</pre></div>
 
 <h3>Sample output</h3>
 <pre>
