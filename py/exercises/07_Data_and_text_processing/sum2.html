@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Cleaning up input data</h3>
+<div class='description'>
+In practice, input data is not always in the desired format, and some pre-processing is required to transform it, before the real work can be done.
+
+Add more code to the previous program (sum1) to deal with input data that contains lines of text, blank lines, and spaces around the numbers that are to be added.
+<ul><li>Lines containing text and blank lines can be ignored.</li>
+<li>Use the .strip() method to remove whitespace from the beginning and end of each line of data.</ul>Tips:
+
+The following function will return True if a string only contains digits, and can be safely transformed into an int using the int() function.
+<pre class='sample-code'>
+def is_number(string):
+    return string != '' and all(char.isdigit() for char in string)
+</pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Enter name of file containing a list of numbers to add: <strong>data.txt</strong>
+
+----- Contents of file: data.txt -----
+Here are some numbers that need adding...
+
+ 12
+ 19
+104
+  6
+ 18
+ 22
+
+Second part...
+
+ 37
+ 12
+ 16
+  5
+  1
+
+------ End of content ------
+
+Contents of file split into lines: ['Here are some numbers that need adding...', '', ' 12  ', ' 19', '104', '  6', ' 18', ' 22', '', 'Second part...', '', ' 37', ' 12', ' 16', '  5', '  1']
+
+List of lines with surrounding whitespace stripped out of each line: ['Here are some numbers that need adding...', '', '12', '19', '104', '6', '18', '22', '', 'Second part...', '', '37', '12', '16', '5', '1']
+
+Only the lines that contain numbers: ['12', '19', '104', '6', '18', '22', '37', '12', '16', '5', '1']
+
+List converted into integers: [12, 19, 104, 6, 18, 22, 37, 12, 16, 5, 1]
+
+Sum of the numbers: 252
+</pre>
+</body>
+</html>
