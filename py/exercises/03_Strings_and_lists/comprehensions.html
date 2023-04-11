@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>List comprehensions</h3>
+<div class='description'>
+A <strong>list comprehension</strong> is a Python feature that allows a new list to be created from an existing sequence, using a concise and elegant syntax.
+
+The basic form of a list comprehension is as follows:
+<pre class='sample-code'>
+<em>newlist</em> <strong>= [</strong><em>expression</em> <strong>for</strong> <em>item</em> <strong>in</strong> <em>sequence</em><strong>]</strong>
+</pre>In the example below there are two list comprehensions.
+<ul><li>The first generates a list of numbers in the range 0 to 9.</li>
+<li>The second generates a new list of numbers from the first list, where each number in the new list is one greater than the corresponding number in the original list.</li></ul><pre class='sample-code'>
+>>> numbers = [i for i in  range(10)]
+>>> numbers
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> plus_one = [i + 1 for i in numbers]
+>>> plus_one
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>>
+</pre>Notice how list comprehensions provide one-line solutions for code that would otherwise need to be written using loops:
+<pre class='sample-code'>
+numbers = []
+
+for i in range(10):
+    numbers.append(i)
+
+print("numbers:", numbers)
+
+plus_one = []
+
+for i in numbers:
+    plus_one.append(i + 1)
+
+print("plus_one", plus_one)
+</pre>List comprehensions are shorter and, once you get used to them, easier to read, than loops.
+
+A further refinement is that a condition can be added to filter out unwanted items from the original sequence. This form has the following syntax:
+<pre class='sample-code'>
+<em>newlist</em> <strong>= [</strong><em>expression</em> <strong>for</strong> <em>item</em> <strong>in</strong> <em>sequence</em> <strong>if</strong> <em>condition</em><strong>]</strong>
+</pre>The following example shows how this can be used to generate a list that contains only even numbers.
+<pre class='sample-code'>
+>>> even_numbers = [i for i in  range(1, 21) if i % 2 == 0]  
+>>> even_numbers
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+</pre>As an exercise, write a program that generates a times table using a list comprehension.</div>
+
+<h3>Sample output</h3>
+<pre>
+Enter the times table you want me to generate: 6
+
+Values in table: [6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72]
+</pre>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Testing for membership</h3>
+<div class='description'>
+The <strong>in</strong> operator can be used to answer the question: does a sequence of items (like a list or a string, for example) contain a given sub-sequence? It returns simply True or False (i.e. it's a Boolean operator).
+
+Conversely, the <strong>not in</strong> operator returns True if a given sequence <em>does not contain</em> a given sub-sequence; and False otherwise.
+
+The following examples show how this works with strings.
+<pre class='sample-code'>
+>>> 'o' in 'hello world'
+True
+>>> 'a' in 'hello world'
+False
+>>> 'world' in 'hello world'
+True
+>>> 'apple' not in 'hello world'
+True
+>>>
+</pre>The following examples show how this works with lists.
+<pre class='sample-code'>
+>>> fruit = ['apple', 'banana', 'kiwi', 'orange', 'pineapple']
+>>> 'kiwi' in fruit
+True
+>>> ['kiwi', 'orange'] in fruit
+False
+>>> 'pear' in fruit
+False
+>>> 'pear' not in fruit
+True
+>>>
+</pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Experiment with <strong>in</strong> and <strong>not in</strong> in the REPL to ensure you understand this concept.</pre>
+</body>
+</html>
