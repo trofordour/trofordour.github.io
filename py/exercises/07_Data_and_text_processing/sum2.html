@@ -12,7 +12,14 @@ Add more code to the previous program (sum1) to deal with input data that contai
 <ul><li>Lines containing text and blank lines can be ignored.</li>
 <li>Use the .strip() method to remove whitespace from the beginning and end of each line of data.</ul>Tips:
 
-The following function will return True if a string only contains digits, and can be safely transformed into an int using the int() function.
+Attempting to convert a string to an int will fail with an error if the string contains non-digit characters, as illustrated in the example below.
+<pre class='sample-code'>
+>>> int("the answer is 3")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'the answer is 3'
+>>>
+</pre>The following function, which you can use in your program, will return True if a string only contains digits, and can be safely transformed into an int using the int() function.
 <pre class='sample-code'>
 def is_number(string):
     return string != '' and all(char.isdigit() for char in string)

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Strings</h3>
+<div class='description'>
+In many situations, a string can be treated as a list of characters. For example, a string can be passed to the len() function, and the index operator (square brackets) can be used with strings:
+<pre class='sample-code'>
+>>> 'hello world'
+'hello world'
+>>> len('hello world')
+11
+>>> 'hello world'[0]
+'h'
+>>>
+</pre>A string can be converted into a true list of characters using the list() function:
+<pre class='sample-code'>
+>>> list('hello world')
+['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+>>></pre>A list of characters (or strings) can be converted into a string using the .join() method:
+<pre class='sample-code'>
+>>> list_of_chars = list('hello world')
+>>> list_of_chars
+['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+>>> "".join(list_of_chars)
+'hello world'
+>>> "-X-".join(list_of_chars) 
+'h-X-e-X-l-X-l-X-o-X- -X-w-X-o-X-r-X-l-X-d'
+>>></pre>One critical way in which a string differs from a list of characters is that a string is <em>immutable</em>, which means that, once a string has been created it cannot be changed:
+<pre class='sample-code'>
+>>> 'hello world'[0] = 'H'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>>
+>>> list_of_chars
+['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+>>> list_of_chars[0] = 'H'
+>>> "".join(list_of_chars)
+'Hello world'
+>>></pre>Hence, it is always necessary to create a new string in order to create a different string value.
+
+If a new string value needs to be based on an existing string value, then it is common to use indexing operators or the .replace() method to construct the new string:
+<pre class='sample-code'>
+>>> 'hello world'.replace('h', 'H')
+'Hello world'
+>>> 'hello world'.replace('hello', 'goodbye')
+'goodbye world'
+>>> 'hello world'.replace('o', 'u')
+'hellu wurld'
+>>>
+>>> greeting = 'hello world'
+>>> greeting
+'hello world'
+>>> 'H' + greeting[1:]
+'Hello world'
+>>></pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Ensure you understand the examples given above by replaying them yourself in the Python REPL.</pre>
+</body>
+</html>
