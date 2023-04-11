@@ -4,8 +4,10 @@
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body><a href='../index.html'>Home</a>
-<h3>Strings</h3>
+<h3>Working with strings</h3>
 <div class='description'>
+A value enclosed in single or double quotes is called a string.
+
 In many situations, a string can be treated as a list of characters. For example, a string can be passed to the len() function, and the index operator (square brackets) can be used with strings:
 <pre class='sample-code'>
 >>> 'hello world'
@@ -19,7 +21,7 @@ In many situations, a string can be treated as a list of characters. For example
 <pre class='sample-code'>
 >>> list('hello world')
 ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
->>></pre>A list of characters (or strings) can be converted into a string using the .join() method:
+>>></pre>A list of characters (or a list of strings) can be converted into a string using the .join() method:
 <pre class='sample-code'>
 >>> list_of_chars = list('hello world')
 >>> list_of_chars
@@ -28,7 +30,30 @@ In many situations, a string can be treated as a list of characters. For example
 'hello world'
 >>> "-X-".join(list_of_chars) 
 'h-X-e-X-l-X-l-X-o-X- -X-w-X-o-X-r-X-l-X-d'
->>></pre>One critical way in which a string differs from a list of characters is that a string is <em>immutable</em>, which means that, once a string has been created it cannot be changed:
+>>></pre>A string with nothing in it ('') is called an <em>empty</em> string.
+<pre class='sample-code'>
+>>> ''
+''
+>>> len('')
+0
+>>> list('')
+[]
+>>>
+</pre>Strings (and lists) can be joined together to form new strings (or lists) using the plus operator (+). This is called <em>concatenation</em>.
+<pre class='sample-code'>
+>>> 'hello' + ' ' + 'world'
+'hello world'
+>>> greeting = 'hello'
+>>> greeting
+'hello'
+>>> greeting += ' '
+>>> greeting
+'hello '
+>>> greeting += 'world'
+>>> greeting
+'hello world'
+>>>
+</pre>One critical way in which a string differs from a list of characters is that a string is <em>immutable</em>, which means that, once a string has been created it cannot be changed:
 <pre class='sample-code'>
 >>> 'hello world'[0] = 'H'
 Traceback (most recent call last):
@@ -40,9 +65,9 @@ TypeError: 'str' object does not support item assignment
 >>> list_of_chars[0] = 'H'
 >>> "".join(list_of_chars)
 'Hello world'
->>></pre>Hence, it is always necessary to create a new string in order to create a different string value.
+>>></pre>It is therefore always necessary to create a new string in order to create a different string value.
 
-If a new string value needs to be based on an existing string value, then it is common to use indexing operators or the .replace() method to construct the new string:
+If a new string value needs to be based on an existing string value, then it is common to use indexing operators, or the .replace() method, to construct the new string:
 <pre class='sample-code'>
 >>> 'hello world'.replace('h', 'H')
 'Hello world'
