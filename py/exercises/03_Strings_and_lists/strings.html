@@ -19,6 +19,23 @@ In many situations, a string can be treated as a list of characters. For example
 >>> 'hello world'[0]
 'h'
 >>>
+</pre>We can iterate over the characters in a string like this:
+<pre class='sample-code'>
+>>> for c in "hello world":
+...     print(c)
+... 
+h
+e
+l
+l
+o
+
+w
+o
+r
+l
+d
+>>>
 </pre>A string can be converted into a true list of characters using the list() function:
 <pre class='sample-code'>
 >>> list('hello world')
@@ -28,8 +45,10 @@ In many situations, a string can be treated as a list of characters. For example
 >>> list_of_chars = list('hello world')
 >>> list_of_chars
 ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+>>> 
 >>> "".join(list_of_chars)
 'hello world'
+>>> 
 >>> "-X-".join(list_of_chars) 
 'h-X-e-X-l-X-l-X-o-X- -X-w-X-o-X-r-X-l-X-d'
 >>></pre>A string with nothing in it ('') is called an <em>empty</em> string.
