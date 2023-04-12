@@ -6,6 +6,8 @@
 <body><a href='../index.html'>Home</a>
 <h3>List comprehensions</h3>
 <div class='description'>
+For this exercise, follow along with the examples given below in the Python REPL. Experiment with the sample code, to ensure you understand the concepts presented.
+
 A <strong>list comprehension</strong> is a Python feature that allows a new list to be created from an existing sequence, using a concise and elegant syntax.
 
 The basic form of a list comprehension is as follows:
@@ -14,15 +16,17 @@ The basic form of a list comprehension is as follows:
 </pre>In the example below there are two list comprehensions.
 <ul><li>The first generates a list of numbers in the range 0 to 9.</li>
 <li>The second generates a new list of numbers from the first list, where each number in the new list is one greater than the corresponding number in the original list.</li></ul><pre class='sample-code'>
->>> numbers = [i for i in  range(10)]
+>>> numbers = [i for i in range(10)]
 >>> numbers
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>>
 >>> plus_one = [i + 1 for i in numbers]
 >>> plus_one
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>>
 </pre>Notice how list comprehensions provide one-line solutions for code that would otherwise need to be written using loops:
 <pre class='sample-code'>
+# Paste this code into a new program and run it
 numbers = []
 
 for i in range(10):

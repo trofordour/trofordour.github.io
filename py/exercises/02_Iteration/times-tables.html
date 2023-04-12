@@ -10,7 +10,14 @@ Write a program to generate and print the first 12 times tables in a grid.
 
 Tips:
 
-Use f-string syntax to right-justify computed results in fixed-width strings, to ensure columns in the grid
+To iterate over every possible combination of values from two or more ranges of values, use <em>nested loops</em> (i.e. place one loop inside another).
+
+In this exercise, we can iterate over the full 12 x 12 combinations of values like this:
+<pre class='sample-code'>
+for x in range(1, 13):
+    for y in range(1, 13):
+        # Do something with x and y...
+</pre>Use f-string syntax to right-justify computed results in fixed-width strings, to ensure columns in the grid
 line up neatly.
 
 For example, the following can be used to put the result of x * y in a 4-character wide string:

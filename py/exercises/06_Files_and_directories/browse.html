@@ -27,11 +27,7 @@ Use os.path.abspath('.') to get the current working directory, to make the promp
 
 Use os.chdir(path) to change directory.
 
-A program that prompts for a command, executes it, and then prompts for a another command, is often referred to as a REPL, which stands for:
-<ul><li>Read command</li>
-<li>Execute command</li>
-<li>Print result</li>
-<li>Loop back to the beginning</li></ul>The following code can be used as the foundation of a program that implements a REPL:
+The following code can be used as the foundation of a program that implements an interactive REPL:
 <pre class='sample-code'>
 def get_command():
     instruction = input(get_prompt())
