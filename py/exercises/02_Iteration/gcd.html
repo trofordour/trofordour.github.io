@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Greatest Common Divisor (GCD)</h3>
+<div class='description'>
+Write a program to compute the GCD of two positive integers using <a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">Euclid's algorithm</a>.
+
+The subtraction-based version of the algorithm (summarised below) is probably the easiest version to understand and implement, initially.
+
+Tips:
+
+The GCD of two positive integers is the largest positive integer that divides them both (remainder zero).
+
+In summary: Euclid's method for computing the GCD of two positive integers consists of replacing the larger number by the difference of the numbers, and repeating this until the two numbers are equal.
+
+When the two numbers have become equal, the algorithm stops, and this equality is the GCD of the original two numbers.</div>
+
+<h3>Sample output</h3>
+<pre>
+Enter two positive integers and I will calculate the greatest common demonitator using Euclid's algorithm
+
+Enter a number: <strong>7350</strong>
+
+Enter another number: <strong>906</strong>
+
+7350 - 906 = 6444
+
+6444 - 906 = 5538
+
+5538 - 906 = 4632
+
+4632 - 906 = 3726
+
+3726 - 906 = 2820
+
+2820 - 906 = 1914
+
+1914 - 906 = 1008
+
+1008 - 906 = 102
+
+906 - 102 = 804
+
+804 - 102 = 702
+
+702 - 102 = 600
+
+600 - 102 = 498
+
+498 - 102 = 396
+
+396 - 102 = 294
+
+294 - 102 = 192
+
+192 - 102 = 90
+
+102 - 90 = 12
+
+90 - 12 = 78
+
+78 - 12 = 66
+
+66 - 12 = 54
+
+54 - 12 = 42
+
+42 - 12 = 30
+
+30 - 12 = 18
+
+18 - 12 = 6
+
+12 - 6 = 6
+
+The greatest common denominator of 7350 and 906 is 6
+
+7350 = 6 * 1225
+
+906 = 6 * 151</pre>
+</body>
+</html>
