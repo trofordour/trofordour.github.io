@@ -9,22 +9,16 @@
 Write a program that calculates and prints the prime numbers, in order, in the range from 1 to 100.
 
 Tips:
-
-2 is the first prime number (1 is not prime).
-
-No even number greater than 2 can be a prime number (because it is divisible by 2).
-
-i.e. if n % 2 == 0 then n is not prime.
-
-Every non-prime number greater than 1 is divisible by a prime number.
-
-To use the above rule efficiently it is necessary to keep track of prime numbers generated so far (e.g. using a list).
+<ul><li>2 is the first prime number (1 is not prime).</li>
+<li>No even number greater than 2 can be a prime number (because it is divisible by 2).</li>
+<ul><li>To put it another way: if n % 2 == 0 then n is not prime.</li></ul>
+<li>Every non-prime number greater than 1 is divisible by a prime number.</li></ul>To use the last rule above efficiently it is necessary to keep track of prime numbers generated so far (e.g. using a list).
 
 As an entry level solution, the program can be written without lists (or other data structures).
 
 To check if an odd number n is prime, divide it by all odd numbers in the range 3 to n // 2.
 
-i.e. if n is an odd number, for each odd number i in the range 3 to n // 2, if n % i == 0 then n is not prime.
+To put it another way: if n is an odd number, for each odd number i in the range 3 to n // 2, if n % i == 0 then n is not prime.
 </div>
 
 <h3>Sample output</h3>
