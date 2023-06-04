@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Ceaser cipher</h3>
+<div class='description'>
+A simple way to encrypt text is to replace each character by another character which is a fixed number of positions away from it in the alphabet.
+
+For example, using an offset of 1, 'a' would become 'b', 'b' would become 'c', and so on.
+
+If the offset is 2, 'a' becomes 'c', 'b' becomes 'd', etc.
+
+Write a program that can encrypt messages written in lower case, using such a shift cipher.
+
+Tips:
+
+If you look back at the exercise to print ASCII character codes, you notice that letters of the alphabet appear in order. This important detail provides the means whereby a shift cipher can be implmented.
+
+In Python, the ord() function can be used to convert a character into its ASCII code, an offset can be added, and then the result can be converted back into a character using the chr() function.
+<pre class='sample-code'>
+>>> ord('a')
+97
+>>> chr(97 + 1)
+'b'
+>>>
+</pre>At the end of the character set, it is necessary to loop back around to the beginning. For example, adding 1 to 'z' should bring us back to 'a'.
+
+This looping can be achieved using the modulus operator. Consider: there are 26 letters in the alphabet and 26 % 26 equals 0, 27 % 26 = 1, and so on.
+
+However, the ASCII code for 'a' is 97, not 0. Therefore, it is necessary to convert character codes into their corresponding positions in the alphabet, prior to performing the modulus operation above, and then it is necessasry to convert the new alphabet index back into an ASCII code again.
+<pre class='sample-code'>
+>>> # this example shows how 'z' can be converted into 'a', if we are shifting each character by one positon
+>>> ord('a')
+97
+>>> ord('z')
+122
+>>> 122 - 97 # convert code for 'z' into position of 'z' in the alphabet (where 'a' has index 0)
+25
+>>> 25 + 1 # add the offset to get the encrypted letter index
+26
+>>> 26 % 26 # normalize the result ('z' loops back to 'a')
+0
+>>> 0 + 97 # convert the encrypted letter index back into an ASCII chracter code
+97
+>>> chr(97)
+'a'
+>>>
+</pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Enter a number to offset character codes by: <strong>1</strong>
+
+Enter a message to encrypt: <strong>abc xyz</strong>
+
+'a' =  97 -> -97 =  0 -> +1 =  1 -> %26 =  1 -> +97 =  98 = 'b'
+'b' =  98 -> -97 =  1 -> +1 =  2 -> %26 =  2 -> +97 =  99 = 'c'
+'c' =  99 -> -97 =  2 -> +1 =  3 -> %26 =  3 -> +97 = 100 = 'd'
+
+'x' = 120 -> -97 = 23 -> +1 = 24 -> %26 = 24 -> +97 = 121 = 'y'
+'y' = 121 -> -97 = 24 -> +1 = 25 -> %26 = 25 -> +97 = 122 = 'z'
+'z' = 122 -> -97 = 25 -> +1 = 26 -> %26 =  0 -> +97 =  97 = 'a'
+
+
+Original text:  'abc xyz'
+
+Encrypted text: 'bcd yza'
+</pre>
+</body>
+</html>
