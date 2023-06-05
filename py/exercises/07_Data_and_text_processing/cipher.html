@@ -16,7 +16,7 @@ Write a program that can encrypt messages written in lower case, using such a sh
 
 Tips:
 
-If you look back at the exercise to print ASCII character codes, you notice that letters of the alphabet appear in order. This important detail provides the means whereby a shift cipher can be implmented.
+If you look back at the exercise to print ASCII character codes, you notice that letters of the alphabet appear in order. This important detail provides a means whereby a shift cipher can be implmented.
 
 In Python, the ord() function can be used to convert a character into its ASCII code, an offset can be added, and then the result can be converted back into a character using the chr() function.
 <pre class='sample-code'>
@@ -64,9 +64,27 @@ Enter a message to encrypt: <strong>abc xyz</strong>
 'z' = 122 -> -97 = 25 -> +1 = 26 -> %26 =  0 -> +97 =  97 = 'a'
 
 
-Original text:  'abc xyz'
+Original text:    'abc xyz'
 
-Encrypted text: 'bcd yza'
-</pre>
+Transformed text: 'bcd yza'
+
+
+
+Enter a number to offset character codes by: <strong>25</strong>
+
+Enter a message to encrypt: <strong>bcd yza</strong>
+
+'b' =  98 -> -97 =  1 -> +25 = 26 -> %26 =  0 -> +97 =  97 = 'a'
+'c' =  99 -> -97 =  2 -> +25 = 27 -> %26 =  1 -> +97 =  98 = 'b'
+'d' = 100 -> -97 =  3 -> +25 = 28 -> %26 =  2 -> +97 =  99 = 'c'
+
+'y' = 121 -> -97 = 24 -> +25 = 49 -> %26 = 23 -> +97 = 120 = 'x'
+'z' = 122 -> -97 = 25 -> +25 = 50 -> %26 = 24 -> +97 = 121 = 'y'
+'a' =  97 -> -97 =  0 -> +25 = 25 -> %26 = 25 -> +97 = 122 = 'z'
+
+
+Original text:    'bcd yza'
+
+Transformed text: 'abc xyz'</pre>
 </body>
 </html>
