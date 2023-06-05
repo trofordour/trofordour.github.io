@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>F-strings</h3>
+<div class='description'>
+When printing text, it is often desirable to have fine control over the spacing and formatting of values, in order to make the output clear. For example, sometimes we want to print a table where the columns of values are neatly aligned.
+
+The print() function can be used to print a comma separated list of values. By default, it places a space between each value in the list.
+<pre class='sample-code'>
+>>> print("7 plus 8 is", 7 + 8, "and 7 times 8 is", 7 * 8, "and 7 divided by 8 is", 7 / 8)  
+7 plus 8 is 15 and 7 times 8 is 56 and 7 divided by 8 is 0.875
+>>></pre>This mechanism is ok for simple programs, but it is insufficient if we want to control the number of digits printed after a decimal point, or the width of the field in which a number is printed, for example.
+
+There are multiple ways in which text can be formatted in Python, but perhaps the most convenient and popular approach is to use f-strings. An f-string is a string with an f in front of it.
+<pre class='sample-code'>
+>>> "I am a simple string"
+'I am a simple string'
+>>> f"I am an f-string"
+'I am an f-string'
+>>></pre>In the above example, there is no apparent difference between the regular string and the f-string. The power of f-strings comes when we introduce curly braces. Any value appearing in a curly brace is evaluated, and the result is included in the output, instead of the original curly braces and their contents. (This is called <em>string interpolation</em>.)
+<pre class='sample-code'>
+>>> print(f"7 plus 8 is {7 + 8} and 7 times 8 is {7 * 8} and 7 divided by 8 is {7 / 8}")    
+7 plus 8 is 15 and 7 times 8 is 56 and 7 divided by 8 is 0.875
+>>></pre>Expressions to be evaluated can contain variables.
+<pre class='sample-code'>
+>>> x = 7
+>>> y = 8
+>>> print(f"{x} plus {y} is {x + y} and {x} times {y} is {x * y} and {x} divided by {y} is {x / y}")  
+7 plus 8 is 15 and 7 times 8 is 56 and 7 divided by 8 is 0.875
+>>></pre><em>Format specifiers</em> can be introduced to control the width of the field in which a value appears (the <em>field width</em>). In their most basic form, a format specifier is simply a number following the colon character. The number specifies the width of the field in which the value should be placed. In the following examples, vertical bars are used to make it easier to clearly see field widths and justifications.
+<pre class='sample-code'>
+>>> print(f"{x} plus {y} is |{x + y:5}| and {x} times {y} is |{x * y:5}| and {x} divided by {y} is |{x / y:5}|") 
+7 plus 8 is |   15| and 7 times 8 is |   56| and 7 divided by 8 is |0.875|
+>>></pre>A < sign can be used to indicate that the value should be left-justified, a > that it should be right-justified, and a ^ to indicate that it should be centered.
+<pre class='sample-code'>
+>>> print(f"{x} plus {y} is |{x + y:<5}| and {x} times {y} is |{x * y:^5}| and {x} divided by {y} is |{x / y:>5}|")
+7 plus 8 is |15   | and 7 times 8 is | 56  | and 7 divided by 8 is |0.875|
+>>></pre>A format specifier of the form n.mf can be used to indicate how a decimal number should be formatted, where n is the overall field width, and m is the number of digits that should appear after the decimal point.
+<pre class='sample-code'>
+>>> f"|{7 / 8:5.2f}|" 
+'| 0.88|'
+>>></pre>Field width and justification specifiers can also be applied to text.
+<pre class='sample-code'>
+>>> greeting = "hello"
+>>> print(f"|{greeting:<10}|-|{greeting:^10}|-|{greeting:>10}|")   
+|hello     |-|  hello   |-|     hello|
+>>></pre>Complete this exercise by writing a small program to replicate the output shown in the example below.</div>
+
+<h3>Sample output</h3>
+<pre>
+99 padded to a witdth of three characters is | 99| and padded to a width of five characters is |   99|
+
+22 / 7 in a field of width four, to one decimal place, is | 3.1| and in a field of width eight, to five decimal places, is | 3.14286|
+
+Here is the word 'hello' left-justified in a field of width seven |hello  | and now right-justified |  hello| and now centered | hello |
+</pre>
+</body>
+</html>
