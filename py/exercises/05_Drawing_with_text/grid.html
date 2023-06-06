@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Representing a two dimensional grid using a list of lists</h3>
+<div class='description'>
+The previous exercise introduced nested lists and hopefully it is obvious that all the examples given were also representations of two dimensional grids, where the top-left element had coordinates (0, 0) and the bottom-right element had coordinates (n, m) where n is the number of elements in each list, and m is the number of lists.
+
+To help make this more clear, here is another example where the elements contained in the lists are strings, where each string specifies the coordinates of its position in the grid.
+<pre class='sample-code'>
+>>> grid = [["(0,0)","(0,1)","(0,2)"], ["(1,0)","(1,1)","(1,2)"],["(2,0)","(2,1)","(2,2)"]]
+>>> grid[0]
+['(0,0)', '(0,1)', '(0,2)']
+>>> grid[1]
+['(1,0)', '(1,1)', '(1,2)']
+>>> grid[2]
+['(2,0)', '(2,1)', '(2,2)']
+>>></pre>The first number in each string can be interpreted as the x-coordinate and the second number as the y-coordinate.
+
+With a coordinate system established, it is possible to start drawing graphs, and simple pictures, using single characters to "colour" the screen.
+
+Here's an example of representation of an X-style cross, using asterisk characters to draw the lines, and spaces to represent blank space.
+<pre class='sample-code'>
+>>> x = [["*", " ", "*"], [" ", "*", " "], ["*", " ", "*"]]
+>>></pre>Here's a program to draw the cross.
+<pre class='sample-code'>
+def display_canvas(canvas):
+    for row in canvas:
+        print("".join(row))
+
+x = [["*", " ", "*"], [" ", "*", " "], ["*", " ", "*"]]
+
+display_canvas(x)
+</pre>Here's the output of the above program.
+<pre class='sample-code'>
+* *
+ *
+* *
+</pre>As an exercise, construct your own simple picture using a two dimensional list of lists, and then use the display_canvas function shown above to display it.</div>
+
+<h3>Sample output</h3>
+<pre>
+Make your own simple picture and display it.</pre>
+</body>
+</html>

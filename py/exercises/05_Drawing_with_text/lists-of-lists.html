@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Nested lists</h3>
+<div class='description'>
+By now you are familar with lists that contain simple types like numbers or strings, but what about a list that contains other lists? Here's an example:
+<pre class='sample-code'>
+>>> items = [[1,2,3],[4,5,6],[7,8,9]]
+>>> items
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> items[0]
+[1, 2, 3]
+>>> items[1]
+[4, 5, 6]
+>>> items[2]
+[7, 8, 9]
+>>></pre>In the example above, each element in the list called <em>items</em> is another list. We refer to the inner lists as <em>sub-lists</em> or <em>nested-lists</em>.
+
+We can index the individual elements in each sub-list by introducing a second instance of the indexing operator.
+<pre class='sample-code'>
+>>> items[0][0]
+1
+>>></pre>In the example above, the first use of [0] means <em>get the first list</em>. The second use of [0] means <em>get the first element of the list obtained from the first use of [0]</em>.
+
+In this fashion, all the elements of the original list can be referenced.
+<pre class='sample-code'>
+>>> items[0][1]
+2
+>>> items[0][2]
+3
+>>> items[1][0]
+4
+>>> items[1][1]
+5
+>>> items[1][2]
+6
+>>> items[2][0]
+7
+>>> items[2][1]
+8
+>>> items[2][2]
+9
+>>></pre>It is usually impractical to deal with the elements of a large data structure like this each individual element at a time, so iteration is often used in conjunction with nested lists.
+<pre class='sample-code'>
+>>> for x in range(3): 
+...     for y in range(3): 
+...             print(f"items[{x}][{y}] has value {items[x][y]}")     
+...
+items[0][0] has value 1
+items[0][1] has value 2
+items[0][2] has value 3
+items[1][0] has value 4
+items[1][1] has value 5
+items[1][2] has value 6
+items[2][0] has value 7
+items[2][1] has value 8
+items[2][2] has value 9
+>>></pre>Below is program that generates a list of lists to represent times tables from 1 to 12.
+<pre class='sample-code'>
+times_tables = []
+
+for i in range(1, 13):
+    one_table = [i * j for j in range(1, 13)]
+
+    times_tables.append(one_table)
+
+print(times_tables)
+</pre>Below is the output it produces.
+<pre class='sample-code'>
+[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36], [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60], [6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72], [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84], [8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96], [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120], [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132], [12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144]]
+</pre>As an exercise, complete the above program by printing the above list-of-lists in a nicely formatted, two dimensional table.
+</div>
+
+<h3>Sample output</h3>
+<pre>
+   1   2   3   4   5   6   7   8   9  10  11  12
+   2   4   6   8  10  12  14  16  18  20  22  24
+   3   6   9  12  15  18  21  24  27  30  33  36
+   4   8  12  16  20  24  28  32  36  40  44  48
+   5  10  15  20  25  30  35  40  45  50  55  60
+   6  12  18  24  30  36  42  48  54  60  66  72
+   7  14  21  28  35  42  49  56  63  70  77  84
+   8  16  24  32  40  48  56  64  72  80  88  96
+   9  18  27  36  45  54  63  72  81  90  99 108
+  10  20  30  40  50  60  70  80  90 100 110 120
+  11  22  33  44  55  66  77  88  99 110 121 132
+  12  24  36  48  60  72  84  96 108 120 132 144
+  </pre>
+</body>
+</html>
