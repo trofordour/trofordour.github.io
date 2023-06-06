@@ -17,7 +17,13 @@ truth_values = [True, False]
 for a in truth_values:
     for b in truth_values:
         # Do something with a and b...
-</pre></div>
+</pre>Use the following, slightly cryptic, f-string syntax, to print a Boolean value (True or False) in a field of width 6 (to get columns of truth values that are neatly aligned):
+<pre class='sample-code'>
+>>> x = True                       
+>>> y = False 
+>>> print(f"|{x!s:6}|-|{y!s:6}|")   
+|True  |-|False |
+>>></pre></div>
 
 <h3>Sample output</h3>
 <pre>
