@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Diagonal lines</h3>
+<div class='description'>
+Following on from the previous exercise, the following function can be used to draw crude diagonal lines on our canvas.
+<pre class='sample-code'>
+import math
+
+def draw_line(canvas, x1, y1, x2, y2, char):
+    # Draw a line from (x1, y1) to (x2, y2)
+    # This code assumes that all points are within the boundaries of the canvas
+
+    # How much do x and y change on this line? Note that the results might be negative, for negative gradients.
+    x_range = x2 - x1
+
+    y_range = y2 - y1
+
+    # Use Pythagoras to calculate how many points need to be drawn
+    line_length = int(math.sqrt(x_range**2 + y_range**2))
+
+    if line_length == 0:
+        return
+
+    # Calculate how much x and y must change for each point along the line
+    x_increment = x_range / line_length
+    
+    y_increment = y_range / line_length
+
+    # Calculate x and y for each point along the line, and plot the points
+    for increment in range(line_length):
+        x = x1 + round(increment * x_increment)
+
+        y = y1 + round(increment * y_increment)
+
+        canvas[x][y] = char
+</pre>Below is an example how this can be used.
+<pre class='sample-code'>
+canvas = create_canvas(20, 60, ".")
+
+draw_line(canvas, 2, 2, 18, 58, "*")
+
+draw_line(canvas, 18, 3, 1, 58, "+")
+
+display_canvas(canvas)
+</pre>Here is the output.
+<pre class='sample-code'>
+............................................................
+.........................................................+..
+..**.................................................++++...
+....****..........................................+++.......
+........****...................................+++..........
+............***.............................+++.............
+...............***.......................+++................
+..................***.................+++...................
+.....................****.........++++......................
+.........................****..+++..........................
+............................+++*............................
+........................++++....****........................
+.....................+++............****....................
+..................+++...................***.................
+...............+++.........................***..............
+............+++...............................***...........
+.........+++.....................................****.......
+.....++++............................................****...
+...++....................................................*..
+............................................................
+</pre>As an exercise, can you combine the code above with code from the previous example to draw a triangle?</div>
+
+<h3>Sample output</h3>
+<pre>
+Make your own simple picture and display it.</pre>
+</body>
+</html>

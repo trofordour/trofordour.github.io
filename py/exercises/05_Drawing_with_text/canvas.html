@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Making a canvas</h3>
+<div class='description'>
+In the previous exercise we used a list of lists to create a two dimensional grid, which we printed to create a crude diagram on the screen. This exercise takes these ideas a little further.
+
+The code below creates and displays a "canvas" of arbitrary length and width. The "." character is placed in every cell in the canvas so we can easily verify its dimensions.
+<pre class='sample-code'>
+def create_canvas(x, y, char):
+    canvas = []
+
+    for i in range(x):
+        row = [char for j in range(y)]
+
+        canvas.append(row)
+
+    return canvas
+
+def display_canvas(canvas):
+    for row in canvas:
+        print("".join(row))
+
+canvas = create_canvas(10, 25, ".")
+
+display_canvas(canvas)
+</pre>Here is the output.
+<pre class='sample-code'>
+.........................
+.........................
+.........................
+.........................
+.........................
+.........................
+.........................
+.........................
+.........................
+.........................
+</pre>Aside: the usual convention in maths, which we learn in primary school, is that the x-axis is horizontal, and the y-axis is vertical. However, due to the way in which these pictures are being printed in text, our graphs are rotated, clockwise, by 90 degrees: the x-axis has become the vertical axis, and the y-axis as become the horizontal axis. While this isn't the way most of us have been trained to think about coordinates, it does not break anything. Our coordinate system is perfectly valid and consistent within itself, and the more you work with it the more you will get used to it.
+
+We can "draw" on the canvas simply by assigning single characters to the <em>cells</em> in the two dimensional list of lists.
+
+For example, the functions below can be used to create horizontal and vertical lines.
+<pre class='sample-code'>
+def draw_horizontal(canvas, x, y1, y2, char):
+    # Draw a line from (x, y1) to (x, y2)
+    # This code assumes that all points are within the boundaries of the canvas and that y1 < y2
+    for y in range(y1, y2):
+        canvas[x][y] = char
+
+def draw_vertical(canvas, x1, x2, y, char):
+    # Draw a line from (x1, y) to (x2, y)
+    # This code assumes that all points are within the boundaries of the canvas and that x1 < x2
+    for x in range(x1, x2):
+        canvas[x][y] = char
+</pre>Here's how the above functions might be used.
+<pre class='sample-code'>
+canvas = create_canvas(10, 25, ".")
+
+draw_horizontal(canvas, 1, 2, 23, "_")
+
+draw_vertical(canvas, 4, 8, 18, "|")
+
+display_canvas(canvas)
+</pre>And here's the output from the above code.
+<pre class='sample-code'>
+.........................
+.._____________________..
+.........................
+.........................
+..................|......
+..................|......
+..................|......
+..................|......
+.........................
+.........................
+</pre>As an exercise, combine code from the above examples to create your own simple pictures. For example, can you plot a rectangle?</div>
+
+<h3>Sample output</h3>
+<pre>
+Make your own simple picture and display it.</pre>
+</body>
+</html>
