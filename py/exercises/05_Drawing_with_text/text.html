@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Adding text to a picture</h3>
+<div class='description'>
+Complete the functions below to add text to our text-based canvas.
+<pre class='sample-code'>
+def draw_text_horizontal(canvas, x1, y1, text):
+    # Add the given text to the diagram, starting at point (x1, y1)
+
+def draw_text_vertical(canvas, x1, y1, text):
+    # Add the given text to the diagram, starting at point (x1, y1), with the text running downwards
+</pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Picture below made from the following function calls:
+
+canvas = create_canvas(10, 25, ".")
+draw_rectangle(canvas, 1, 1, 8, 23, "o")
+draw_rectangle(canvas, 2, 2, 6, 21, " ")
+draw_text_horizontal(canvas, 2, 6, "hello")
+draw_text_vertical(canvas, 3, 14, "world")
+display_canvas(canvas)
+
+.........................
+.ooooooooooooooooooooooo.
+.o    hello            o.
+.o            w        o.
+.o            o        o.
+.o            r        o.
+.o            l        o.
+.o            d        o.
+.ooooooooooooooooooooooo.
+.........................
+</pre>
+</body>
+</html>
