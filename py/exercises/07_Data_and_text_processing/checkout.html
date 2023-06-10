@@ -10,13 +10,13 @@ Given a file called <strong>products.txt</strong> that contains a list of the pr
 
 Tips:
 
-The input data files (see example output below) contain <em>structured data</em>. Each line consists of two fields separated by a <em>delimeter</em> character.
-<ul><li>In products.txt, there are two fields (product name and product price) seperated by the "@" character.</li>
-<li>In shopping.txt, there are two fields (product name and quatity) separated by the "x" character.</li></ul>Each line of data can be easily broken up into its component parts by using the .split() method.
+The input data files (see example output below) contain <em>structured data</em>. Each line consists of two fields separated by a <em>separator</em> character.
+<ul><li>In products.txt, there are two fields (product name and product price) seperated by the "$" character.</li>
+<li>In shopping.txt, there are two fields (product name and quatity) separated by the "#" character.</li></ul>Each line of data can be easily broken up into its component parts by using the .split() method.
 
-For example, the following code splits a string on the '@' character, and then extracts the product name and price, stripping the whitespace from each field, and converting its data type, if necessary:
+For example, the following code splits a string on the '$' character, and then extracts the product name and price, stripping the whitespace from each field, and converting its data type, if necessary:
 <pre class='sample-code'>
-    tokens = product.split('@')
+    tokens = product.split('$')
 
     product_name = tokens[0].strip()
     product_price = float(tokens[1].strip())
@@ -25,37 +25,37 @@ For example, the following code splits a string on the '@' character, and then e
 <h3>Sample output</h3>
 <pre>
 ----- Contents of file: products.txt -----
-Medium Sliced White Bread @ 1.40
-Medium Sliced Wholemeal Bread @ 1.45
-Thick Sliced Granary Bread @ 2.10
-Baked Beans in Tomato Sauce 4 Pack @ 3.99
-Large Free Range Eggs 6 Pack @ 1.70
-Large Free Range Eggs 12 Pack @ 3.30
-Medium Free Range Eggs 6 Pack @ 1.30
-Medium Free Range Eggs 12 Pack @ 2.40
-Whole Milk 2 Pints @ 1.25
-Organic Semi Skimmed Milk 2L @ 2.70
-Chocolate Biscuits @ 1.50
-Instant Coffee @ 6.00
-Washing Up Liquid @ 2.00
+Medium Sliced White Bread $1.40
+Medium Sliced Wholemeal Bread $1.45
+Thick Sliced Granary Bread $2.10
+Baked Beans in Tomato Sauce 4 Pack $3.99
+Large Free Range Eggs 6 Pack $1.70
+Large Free Range Eggs 12 Pack $3.30
+Medium Free Range Eggs 6 Pack $1.30
+Medium Free Range Eggs 12 Pack $2.40
+Whole Milk 2 Pints $1.25
+Organic Semi Skimmed Milk 2L $2.70
+Chocolate Biscuits $1.50
+Instant Coffee $6.00
+Washing Up Liquid $2.00
 
 ------ End of content ------
 
 ----- Contents of file: shopping.txt -----
-Instant Coffee x1
-Chocolate Biscuits x2
-Whole Milk 2 Pints x1
-Medium Sliced Wholemeal Bread x1
+Instant Coffee #1
+Chocolate Biscuits #2
+Whole Milk 2 Pints #2
+Medium Sliced Wholemeal Bread #1
 
 ------ End of content ------
 
 === Receipt ===
 Instant Coffee                 @ 6.00 x 1 =  6.00
 Chocolate Biscuits             @ 1.50 x 2 =  3.00
-Whole Milk 2 Pints             @ 1.25 x 1 =  1.25
+Whole Milk 2 Pints             @ 1.25 x 2 =  2.50
 Medium Sliced Wholemeal Bread  @ 1.45 x 1 =  1.45
 
-Total cost                                = 11.70
+Total cost                                = 12.95
 </pre>
 </body>
 </html>
