@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a href='../index.html'>Home</a>
+<h3>Straight lines</h3>
+<div class='description'>
+Building on what you've learned in the previous exercises in this section, complete the definition of the function below to plot a vertical line on a text-based canvas.
+<pre class='sample-code'>
+def draw_line_vertical(canvas, x1, y1, length, char):
+    # Draw a vertial line downwards from (x1, y1) of the given length (in terms of number of characters)
+    # This code assumes that all points on the line are within the boundaries of the canvas
+</pre>Tips:
+
+The previous exercise showed how a canvas data structure (which is a two dimensional list of lists) can be used to plot pictures made of text characters.
+
+The function below can be used to plot a horizontal straight line on the canvas.
+<pre class='sample-code'>
+def draw_line_horizontal(canvas, x1, y1, length, char):
+    # Draw a horizontal line from (x1, y1) of the given length (in terms of number of characters)
+    # This code assumes that all points on the line are within the boundaries of the canvas
+    for y in range(y1, y1 + length):
+        canvas[x1][y] = char
+</pre>Here's how the above code can be used.
+<pre class='sample-code'>
+canvas = create_canvas(5, 10, ".")
+
+draw_line_horizontal(canvas, 1, 1, 8, "-")
+
+display_canvas(canvas)
+</pre>Here is the output the above code produces.
+<pre class='sample-code'>
+..........
+.--------.
+..........
+..........
+..........
+</pre></div>
+
+<h3>Sample output</h3>
+<pre>
+Picture below made from the following function calls:
+
+canvas = create_canvas(10, 20, ".")
+draw_line_horizontal(canvas, 1, 2, 16, "-")
+draw_line_horizontal(canvas, 8, 2, 16, "-")
+draw_line_vertical(canvas, 2, 1, 6, "|")
+draw_line_vertical(canvas, 2, 18, 6, "|")
+display_canvas(canvas)
+
+....................
+..----------------..
+.|................|.
+.|................|.
+.|................|.
+.|................|.
+.|................|.
+.|................|.
+..----------------..
+....................
+</pre>
+</body>
+</html>

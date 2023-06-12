@@ -43,41 +43,27 @@ display_canvas(canvas)
 
 We can "draw" on the canvas simply by assigning single characters to the <em>cells</em> in the two dimensional list of lists.
 
-For example, the functions below can be used to create horizontal and vertical lines.
+For example, the code below shows how the X-shape given in the example in the previous <em>grid</em> exercise can be rendered in code.
 <pre class='sample-code'>
-def draw_horizontal(canvas, x, y1, y2, char):
-    # Draw a line from (x, y1) to (x, y2)
-    # This code assumes that all points are within the boundaries of the canvas and that y1 < y2
-    for y in range(y1, y2):
-        canvas[x][y] = char
+canvas = create_canvas(7, 7, ".")
 
-def draw_vertical(canvas, x1, x2, y, char):
-    # Draw a line from (x1, y) to (x2, y)
-    # This code assumes that all points are within the boundaries of the canvas and that x1 < x2
-    for x in range(x1, x2):
-        canvas[x][y] = char
-</pre>Here's how the above functions might be used.
-<pre class='sample-code'>
-canvas = create_canvas(10, 25, ".")
-
-draw_horizontal(canvas, 1, 2, 23, "_")
-
-draw_vertical(canvas, 4, 8, 18, "|")
+canvas[2][2] = "*"
+canvas[2][4] = "*"
+canvas[3][3] = "*"
+canvas[4][2] = "*"
+canvas[4][4] = "*"
 
 display_canvas(canvas)
-</pre>And here's the output from the above code.
+</pre>Here's the output from the above code.
 <pre class='sample-code'>
-.........................
-.._____________________..
-.........................
-.........................
-..................|......
-..................|......
-..................|......
-..................|......
-.........................
-.........................
-</pre>As an exercise, combine code from the above examples to create your own simple pictures. For example, can you plot a rectangle?</div>
+.......
+.......
+..*.*..
+...*...
+..*.*..
+.......
+.......
+</pre>As an exercise, combine code from the above examples to create your own simple pictures, using the <em>canvas</em> data structure.</div>
 
 <h3>Sample output</h3>
 <pre>
